@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SampleProject</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="public_infra">Public Infrastructure</string>
+    <string name="public_infra_repair">Repair and Maintenance -  Public Infrastructure</string>
+    <string name="title_activity_saro_retrieval">SARO Retrieval</string>
+
+</resources>

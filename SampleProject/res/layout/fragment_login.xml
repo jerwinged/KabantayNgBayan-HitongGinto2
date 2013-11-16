@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/logo"/>
+
+    <TextView
+        android:text="Username : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/logo"
+        android:id="@+id/t_username"
+        />
+
+    <TextView
+        android:text="Password : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/t_username"
+        android:id="@+id/t_password"
+        />
+
+    <EditText
+        android:hint="Enter your Username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/t_username"
+        android:layout_alignTop="@+id/t_username"
+        android:id="@+id/e_username"
+        />
+
+    <EditText
+        android:hint="Enter your Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/t_password"
+        android:layout_alignTop="@+id/t_password"
+        android:id="@+id/e_password"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/e_password"
+        android:id="@+id/b_login"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/b_login"
+        android:id="@+id/b_cancel"
+        />
+
+</RelativeLayout>
