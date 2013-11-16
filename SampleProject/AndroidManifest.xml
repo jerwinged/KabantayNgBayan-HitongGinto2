@@ -18,15 +18,16 @@
         <activity
             android:name="com.demo.sampleproject.MainActivity"
             android:label="@string/app_name" >
+            
+        </activity>
+        <activity
+            android:name="com.demo.sampleproject.saromgmt.SaroRetrieval"
+            android:label="@string/title_activity_saro_retrieval" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.demo.sampleproject.SaroRetrieval"
-            android:label="@string/title_activity_saro_retrieval" >
         </activity>
         
         <activity

@@ -9,6 +9,7 @@
     tools:context=".SaroRetrieval$PlaceholderFragment">
 
     <ListView
+        android:id="@+id/saro_retrieval_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </ListView>

@@ -1,6 +1,7 @@
 package com.demo.sampleproject.datahandler.util;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,6 +19,7 @@ public class AsyncHttpHandler extends AsyncTask<String, Integer, InputStream> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Log.d("HttpHandler", "Returning response...");
         return httpResponse;
     }
 

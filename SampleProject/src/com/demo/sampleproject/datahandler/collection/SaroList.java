@@ -36,5 +36,9 @@ public class SaroList {
             enumerator.iterate(entry);
         }
     }
+    
+    public int size() {
+    	return this.saroEntries.size();
+    }
 
 }

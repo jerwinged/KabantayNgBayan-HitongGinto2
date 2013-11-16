@@ -16,61 +16,49 @@ public abstract class KabantayJsonAsyncHttpHandler<N> extends AsyncTask<String, 
 
     private static final String TAG = "KABANTAYJSONASYNCHTTPHANDLER";
 
-    private AsyncHttpHandler httpHandler;
-
     public KabantayJsonAsyncHttpHandler() {
-        this.httpHandler = new AsyncHttpHandler();
     }
 
     @Override
     protected N doInBackground(String... params) {
         N parseResult = null;
-        boolean isCancelled = false;
-        httpHandler.execute(params);
-        while (httpHandler.getStatus() == Status.PENDING || httpHandler.getStatus() == Status.RUNNING) {
-            if (this.isCancelled()) {
-                isCancelled = true;
-                break;
-            }
-        }
+        try {
+        	InputStream result = HttpHandler.queryHtml(params[0]);
+            
+            Log.d("SARO HTTP RESPONSE RETRIEVAL", "Processing response");
+            
+        	if (result != null) {
+                try {
+                    JsonReader jsonReader = new JsonReader(new InputStreamReader(result, "UTF-8"));
+                    jsonReader.beginObject();
 
-        if (!isCancelled) {
-            InputStream result = null;
-            try {
-                result = httpHandler.get();
-                if (result != null) {
-                    try {
-                        JsonReader jsonReader = new JsonReader(new InputStreamReader(result, "UTF-8"));
-                        jsonReader.beginObject();
-
-                        //check the success value
-                        if (jsonReader.nextName().equals("status")) {
-                            if (jsonReader.nextString().equals("success")) {
-                                if (jsonReader.hasNext() && jsonReader.nextName().equals("data")) {
-                                    jsonReader.beginArray();
-                                    parseResult = processJsonDataArray(jsonReader);
-                                    jsonReader.endArray();
-                                }
-                                else {
-                                    Log.e(TAG, "Change in JSON structure? Unsupported name/value pair.");
-                                }
+                    //check the success value
+                    if (jsonReader.nextName().equals("status")) {
+                        if (jsonReader.nextString().equals("success")) {
+                            if (jsonReader.hasNext() && jsonReader.nextName().equals("data")) {
+                                jsonReader.beginArray();
+                                parseResult = processJsonDataArray(jsonReader);
+                                jsonReader.endArray();
+                            }
+                            else {
+                                Log.e(TAG, "Change in JSON structure? Unsupported name/value pair.");
                             }
                         }
-                        jsonReader.endObject();
-                    } catch (IOException e) {
-                        e.printStackTrace();
                     }
+                    jsonReader.endObject();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-                else {
-                    Log.d(TAG, "No data received");
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
             }
-        }
-
+            else {
+                Log.d(TAG, "No data received");
+            }
+        } catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+        Log.d("SARO HTTP RESPONSE RETRIEVAL", "Returning...");
+        
         return parseResult;
 
     }

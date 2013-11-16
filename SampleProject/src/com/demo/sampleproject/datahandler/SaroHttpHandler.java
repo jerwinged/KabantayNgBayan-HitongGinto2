@@ -1,23 +1,16 @@
 package com.demo.sampleproject.datahandler;
 
-import android.util.JsonReader;
-import android.util.Log;
-
-import com.demo.sampleproject.AppInfo;
-import com.demo.sampleproject.R;
-import com.demo.sampleproject.datahandler.collection.SaroList;
-import com.demo.sampleproject.datahandler.object.SaroEntry;
-import com.demo.sampleproject.datahandler.util.AsyncHttpHandler;
-import com.demo.sampleproject.datahandler.util.HttpHandler;
-import com.demo.sampleproject.datahandler.util.KabantayJsonAsyncHttpHandler;
-
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import android.util.JsonReader;
+import android.util.Log;
+
+import com.demo.sampleproject.datahandler.collection.SaroList;
+import com.demo.sampleproject.datahandler.object.SaroEntry;
+import com.demo.sampleproject.datahandler.util.KabantayJsonAsyncHttpHandler;
 
 /**
  * Created by kevinpanuelos on 11/16/13.
