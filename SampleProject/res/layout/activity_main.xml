@@ -1,18 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
- 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    >
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/image"/>
+
     <TextView
-        android:layout_width="fill_parent"
+        android:text=""
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ZXing launcher!" />
- 
-    <Button
-        android:layout_width="fill_parent"
+        android:layout_toRightOf="@+id/image"
+        android:id="@+id/name"
+        />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/redemption_code"/>
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onClick"
-        android:text="start ZXing activity"/>
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/image"
+        android:id="@+id/incentive"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Validate"
+        android:onClick="onClick_Validate"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/incentive"
+        android:id="@+id/b_validate"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Report"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/b_validate"
+        android:id="@+id/b_report"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The People's Fund"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/b_report"
+        android:id="@+id/b_peoplefund"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/b_peoplefund"
+        android:id="@+id/b_history"
+        />
+
+</RelativeLayout>
+
  
-</LinearLayout>

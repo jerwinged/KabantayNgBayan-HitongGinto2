@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.zxing.client.android.CaptureActivity;
 
@@ -24,7 +23,7 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	public void onClick(View view) {
+	public void onClick_Validate(View view) {
 		Intent intent = new Intent("com.google.zxing.client.android.SCAN");
         intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
         startActivityForResult(intent, 0);
@@ -35,7 +34,10 @@ public class MainActivity extends Activity {
 	        if (resultCode == RESULT_OK) {
 	            String contents = intent.getStringExtra("SCAN_RESULT");
 	            String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-	           System.out.println("Success");
+	            
+	            Intent intented = new Intent(MainActivity.this, ProjectInfo.class);
+                startActivity(intented);   
+	            
 	        } else if (resultCode == RESULT_CANCELED) {
 	            // Handle cancel
 	        }
