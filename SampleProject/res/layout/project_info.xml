@@ -19,7 +19,7 @@
         android:text="No"
         android:onClick="onClick_No"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:id="@+id/b_no"
         />
 

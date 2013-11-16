@@ -28,6 +28,12 @@
             android:name="com.demo.sampleproject.SaroRetrieval"
             android:label="@string/title_activity_saro_retrieval" >
         </activity>
+        
+        <activity
+            android:label="projectinfo"
+            android:name=".ProjectInfo" >
+        </activity>
+        
     </application>
 
 </manifest>
