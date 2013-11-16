@@ -177,3 +177,6 @@ proguard/
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.jar
+
+*.class
