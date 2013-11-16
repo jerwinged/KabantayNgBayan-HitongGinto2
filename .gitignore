@@ -1,0 +1,6 @@
+
+android/bin/proguard.txt
+
+SampleProject/bin/classes/com/demo/sampleproject/AppInfo.class
+
+*.class
