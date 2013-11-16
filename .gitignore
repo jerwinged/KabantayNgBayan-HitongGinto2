@@ -252,3 +252,5 @@ android/bin/classes/com/google/zxing/client/android/share/ShareActivity.class
 android/bin/classes/com/google/zxing/client/android/wifi/WifiConfigManager.class
 
 android/bin/classes/com/google/zxing/client/android/wifi/WifiConfigManager.class
+
+*.dex
